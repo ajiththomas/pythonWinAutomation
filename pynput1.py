@@ -36,7 +36,7 @@ def main():
     print("[+] Opened CMD")
     time.sleep(1)
 
-    # Open Command Prompt
+    # Run Dir
     type_string("dir")
     press_key(Key.enter)
     print("List contents of current directory")
