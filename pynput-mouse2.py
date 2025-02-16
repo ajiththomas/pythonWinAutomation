@@ -27,10 +27,13 @@ def type_string(string):
 
 # Function to simulate a line drawing (click and drag)
 def mouse_Line(w, x, y, z):
-    mouse.position = (w, x)
-    mouse.press(Button.left)
-    time.sleep(1)
-    mouse.position = (y, z)
+    while True:
+        mouse.position = (w, x)
+        mouse.press(Button.left)
+        w+=1
+        x+=1
+        if mouse.position == (y, z):
+            break
     mouse.release(Button.left)
     time.sleep(1)
 
@@ -80,11 +83,15 @@ def main():
 
     # Press Tab 11 times (example, adjust as needed)
     press_tabNtimes(11)
+ 
+    # Bring MS Paint window to the foreground using pywin32
+    bring_window_to_foreground('Untitled - Paint')
+
 
     # Simulate a click after tabs
-    mouse.press(Button.left)
-    mouse.release(Button.left)
-    time.sleep(2)
+    #mouse.press(Button.left)
+    #mouse.release(Button.left)
+    #time.sleep(2)
 
     # Draw a Line in MS Paint
     mouse_Line(200, 200, 300, 300)
