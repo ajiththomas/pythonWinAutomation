@@ -1,3 +1,6 @@
+#pip install pywin32
+#wont work on linux
+
 import win32api
 import win32con
 import threading
