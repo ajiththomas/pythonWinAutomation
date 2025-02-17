@@ -1,14 +1,14 @@
 import cv2
 import numpy as np
 import pyautogui
-
+#import pyscreeze
 # Take a screenshot of the screen
 screenshot = pyautogui.screenshot()
 screenshot = np.array(screenshot)  # Convert to NumPy array
 screenshot = cv2.cvtColor(screenshot, cv2.COLOR_RGB2BGR)  # Convert to OpenCV format
 
 # Load the template (the Start button image)
-template = cv2.imread("start_button.png", cv2.IMREAD_GRAYSCALE)
+template = cv2.imread("C:\\Users\\barnhill\\Downloads\\start.jpg", cv2.IMREAD_GRAYSCALE)
 screenshot_gray = cv2.cvtColor(screenshot, cv2.COLOR_BGR2GRAY)
 
 # Match template
@@ -26,9 +26,9 @@ if max_val >= threshold:
     print(f"Start button detected at: {start_x}, {start_y}")
 
 # Show the detected result
-cv2.imshow("Detected Start Button", screenshot)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#cv2.imshow("Detected Start Button", screenshot)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
 
 # Click at the detected coordinates
-#pyautogui.click(start_x, start_y)
+pyautogui.click(start_x, start_y)
