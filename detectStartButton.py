@@ -29,3 +29,6 @@ if max_val >= threshold:
 cv2.imshow("Detected Start Button", screenshot)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+# Click at the detected coordinates
+#pyautogui.click(start_x, start_y)
